@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 200 200" preserveAspectRatio="none">
+    <defs>
+        <pattern id="software-grid" patternUnits="userSpaceOnUse" width="200" height="200">
+            <!-- Líneas de Grid Base -->
+            <path d="M 200 0 L 200 200 M 0 200 L 200 200" stroke="#1f77d4" stroke-width="0.2" />
+            
+            <!-- Grupo 1: Símbolos de Código -->
+            <text x="10" y="30" font-family="monospace" font-size="6" fill="#1f77d4" opacity="0.5">{}</text>
+            <text x="50" y="30" font-family="monospace" font-size="6" fill="#1f77d4" opacity="0.5">[]</text>
+            <text x="90" y="30" font-family="monospace" font-size="6" fill="#1f77d4" opacity="0.5">()</text>
+            <text x="130" y="30" font-family="monospace" font-size="6" fill="#1f77d4" opacity="0.5">&lt;&gt;</text>
+            
+            <!-- Grupo 2: Lenguajes de Programación -->
+            <text x="10" y="70" font-family="monospace" font-size="5" fill="#1f77d4" opacity="0.4">JS</text>
+            <text x="50" y="70" font-family="monospace" font-size="5" fill="#1f77d4" opacity="0.4">Py</text>
+            <text x="90" y="70" font-family="monospace" font-size="5" fill="#1f77d4" opacity="0.4">Ts</text>
+            <text x="130" y="70" font-family="monospace" font-size="5" fill="#1f77d4" opacity="0.4">Rx</text>
+            
+            <!-- Grupo 3: Frameworks y Tecnologías -->
+            <text x="10" y="110" font-family="monospace" font-size="4" fill="#1f77d4" opacity="0.35">React</text>
+            <text x="70" y="110" font-family="monospace" font-size="4" fill="#1f77d4" opacity="0.35">Node</text>
+            <text x="130" y="110" font-family="monospace" font-size="4" fill="#1f77d4" opacity="0.35">Next</text>
+            
+            <!-- Grupo 4: Elementos de Código -->
+            <text x="10" y="150" font-family="monospace" font-size="4" fill="#1f77d4" opacity="0.3">&lt;/&gt;</text>
+            <text x="50" y="150" font-family="monospace" font-size="4" fill="#1f77d4" opacity="0.3">//</text>
+            <text x="90" y="150" font-family="monospace" font-size="4" fill="#1f77d4" opacity="0.3">#</text>
+            <text x="130" y="150" font-family="monospace" font-size="4" fill="#1f77d4" opacity="0.3">$_</text>
+            
+            <!-- Grupo 5: Símbolos Técnicos -->
+            <text x="170" y="50" font-family="monospace" font-size="5" fill="#1f77d4" opacity="0.4">⚡</text>
+            <text x="170" y="90" font-family="monospace" font-size="5" fill="#1f77d4" opacity="0.4">⚛</text>
+            <text x="170" y="130" font-family="monospace" font-size="5" fill="#1f77d4" opacity="0.4">λ</text>
+            <text x="170" y="170" font-family="monospace" font-size="5" fill="#1f77d4" opacity="0.4">∞</text>
+            
+            <!-- Líneas de Conexión Diagonales -->
+            <path d="M 30 40 L 70 80" stroke="#1f77d4" stroke-width="0.2" opacity="0.3"/>
+            <path d="M 90 40 L 130 80" stroke="#1f77d4" stroke-width="0.2" opacity="0.3"/>
+            <path d="M 50 120 L 90 160" stroke="#1f77d4" stroke-width="0.2" opacity="0.3"/>
+            
+            <!-- Líneas de Conexión Horizontales -->
+            <path d="M 20 180 L 180 180" stroke="#1f77d4" stroke-width="0.2" opacity="0.2"/>
+            <path d="M 20 190 L 180 190" stroke="#1f77d4" stroke-width="0.2" opacity="0.2" stroke-dasharray="2,2"/>
+            
+            <!-- Puntos de Conexión -->
+            <circle cx="30" cy="40" r="1" fill="#1f77d4" opacity="0.3"/>
+            <circle cx="70" cy="80" r="1" fill="#1f77d4" opacity="0.3"/>
+            <circle cx="90" cy="40" r="1" fill="#1f77d4" opacity="0.3"/>
+            <circle cx="130" cy="80" r="1" fill="#1f77d4" opacity="0.3"/>
+            <circle cx="50" cy="120" r="1" fill="#1f77d4" opacity="0.3"/>
+            <circle cx="90" cy="160" r="1" fill="#1f77d4" opacity="0.3"/>
+            
+            <!-- Elementos Decorativos -->
+            <rect x="160" y="20" width="8" height="8" stroke="#1f77d4" 
+                  stroke-width="0.2" fill="none" opacity="0.3"/>
+            <circle cx="168" cy="168" r="4" stroke="#1f77d4" 
+                    stroke-width="0.2" fill="none" opacity="0.3"/>
+            
+            <!-- Mini Circuitos -->
+            <path d="M 10 170 Q 20 170 20 180 L 20 190" stroke="#1f77d4" 
+                  stroke-width="0.2" fill="none" opacity="0.3"/>
+            <path d="M 190 10 Q 180 10 180 20 L 180 30" stroke="#1f77d4" 
+                  stroke-width="0.2" fill="none" opacity="0.3"/>
+        </pattern>
+    </defs>
+    <rect width="100%" height="100%" fill="url(#software-grid)" />
+</svg>

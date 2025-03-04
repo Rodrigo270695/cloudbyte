@@ -19,3 +19,1013 @@ body {
   background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+@keyframes scroll {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(var(--animation-distance, 50px));
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInDown {
+    0% {
+        opacity: 0;
+        transform: translateY(calc(var(--animation-distance, 50px) * -1));
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInLeft {
+    0% {
+        opacity: 0;
+        transform: translateX(var(--animation-distance, 50px));
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeInRight {
+    0% {
+        opacity: 0;
+        transform: translateX(calc(var(--animation-distance, 50px) * -1));
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes scaleIn {
+    0% {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.animate-scroll {
+    animation: scroll 35s linear infinite;
+}
+
+.animate-scroll:hover {
+    animation-play-state: paused;
+}
+
+.fade-in-up {
+    animation: fadeInUp 0.6s ease-out forwards;
+}
+
+/* Animaciones de entrada */
+.animate-in {
+    animation-name: var(--animation-name, fadeInUp);
+    animation-duration: var(--animation-duration, 700ms);
+    animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    animation-fill-mode: both;
+    animation-delay: var(--animation-delay, 0ms);
+}
+
+/* Efecto de desvanecimiento para el fondo */
+.bg-fade {
+    position: relative;
+    &::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 40%;
+        background: linear-gradient(to bottom, transparent, white);
+        pointer-events: none;
+    }
+}
+
+.stagger-animate {
+    opacity: 0;
+    animation: scaleIn 500ms cubic-bezier(0.4, 0, 0.2, 1) forwards;
+    animation-delay: var(--stagger-delay, 0ms);
+}
+
+/* Mejoras en el scroll */
+.smooth-scroll {
+    scroll-behavior: smooth;
+}
+
+/* Optimizaciones de rendimiento */
+.will-change-transform {
+    will-change: transform;
+}
+
+.will-change-opacity {
+    will-change: opacity;
+}
+
+/* Desactivar animaciones si el usuario prefiere reducir el movimiento */
+@media (prefers-reduced-motion: reduce) {
+    .animate-in,
+    .stagger-animate {
+        animation: none !important;
+        opacity: 1 !important;
+        transform: none !important;
+    }
+}
+
+/* Efecto de brillo mejorado */
+.partner-shine {
+    position: relative;
+    overflow: hidden;
+}
+
+.partner-shine::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(
+        to right,
+        transparent,
+        rgba(255, 255, 255, 0.3),
+        transparent
+    );
+    transform: skewX(-25deg);
+    animation: shine 3s infinite;
+}
+
+@keyframes shine {
+    0% {
+        left: -100%;
+    }
+    100% {
+        left: 200%;
+    }
+}
+
+/* Patrones de fondo para el footer */
+.footer-pattern {
+    background-image: 
+        radial-gradient(circle at 25px 25px, rgba(0,0,0,0.2) 2%, transparent 0%),
+        radial-gradient(circle at 75px 75px, rgba(0,0,0,0.2) 2%, transparent 0%);
+    background-size: 100px 100px;
+}
+
+/* Animación sutil para los gradientes */
+@keyframes gradient-shift {
+    0% {
+        transform: translateX(-50%) translateY(-50%) rotate(0deg);
+    }
+    100% {
+        transform: translateX(-50%) translateY(-50%) rotate(360deg);
+    }
+}
+
+.gradient-animate {
+    animation: gradient-shift 15s linear infinite;
+}
+
+/* Animaciones modernas */
+@keyframes subtle-zoom {
+    from {
+        transform: scale(1);
+    }
+    to {
+        transform: scale(1.05);
+    }
+}
+
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+@keyframes pulse-ring {
+    0% {
+        transform: scale(0.8);
+        opacity: 0.5;
+    }
+    100% {
+        transform: scale(1.3);
+        opacity: 0;
+    }
+}
+
+/* Clases de animación */
+.animate-subtle-zoom {
+    animation: subtle-zoom 20s ease-in-out infinite alternate;
+}
+
+.animate-gradient {
+    background-size: 200% 200%;
+    animation: gradient 8s ease infinite;
+}
+
+.animate-pulse-slow {
+    animation: pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+.animate-float {
+    animation: float 6s ease-in-out infinite;
+}
+
+/* Efectos de hover modernos */
+.hover-lift {
+    transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.hover-lift:hover {
+    transform: translateY(-8px);
+}
+
+/* Efectos de glassmorphism */
+.glass {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.glass-dark {
+    background: rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* Efectos de texto modernos */
+.text-gradient {
+    background: linear-gradient(135deg, #1f77d4 0%, #4fa8ff 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* Sombras modernas */
+.shadow-modern {
+    box-shadow: 
+        0 1px 2px rgba(0, 0, 0, 0.04), 
+        0 2px 4px rgba(0, 0, 0, 0.04), 
+        0 4px 8px rgba(0, 0, 0, 0.04), 
+        0 8px 16px rgba(0, 0, 0, 0.04);
+}
+
+.shadow-modern-hover {
+    transition: box-shadow 0.3s ease;
+}
+
+.shadow-modern-hover:hover {
+    box-shadow: 
+        0 2px 4px rgba(0, 0, 0, 0.08), 
+        0 4px 8px rgba(0, 0, 0, 0.08), 
+        0 8px 16px rgba(0, 0, 0, 0.08), 
+        0 16px 32px rgba(0, 0, 0, 0.08);
+}
+
+/* Efectos de borde */
+.border-gradient {
+    border: double 1px transparent;
+    background-image: linear-gradient(#0a192f, #0a192f), 
+                      linear-gradient(to right, #1f77d4, #4fa8ff);
+    background-origin: border-box;
+    background-clip: padding-box, border-box;
+}
+
+/* Efectos de carga */
+.loading-shimmer {
+    background: linear-gradient(
+        90deg,
+        rgba(255, 255, 255, 0) 0%,
+        rgba(255, 255, 255, 0.1) 50%,
+        rgba(255, 255, 255, 0) 100%
+    );
+    background-size: 200% 100%;
+    animation: shimmer 1.5s infinite;
+}
+
+@keyframes shimmer {
+    0% {
+        background-position: -200% 0;
+    }
+    100% {
+        background-position: 200% 0;
+    }
+}
+
+/* Media queries para animaciones reducidas */
+@media (prefers-reduced-motion: reduce) {
+    .animate-subtle-zoom,
+    .animate-gradient,
+    .animate-pulse-slow,
+    .animate-float {
+        animation: none !important;
+    }
+}
+
+/* Estilos para las nubes */
+.clouds-container {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+.cloud {
+    position: absolute;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 100px;
+    animation: float-cloud linear infinite;
+}
+
+.cloud::before,
+.cloud::after {
+    content: '';
+    position: absolute;
+    background: inherit;
+    border-radius: 50%;
+}
+
+.cloud-1 {
+    width: 300px;
+    height: 100px;
+    top: 20%;
+    left: -10%;
+    animation-duration: 45s;
+}
+
+.cloud-2 {
+    width: 200px;
+    height: 70px;
+    top: 40%;
+    left: -15%;
+    animation-duration: 35s;
+    animation-delay: -10s;
+}
+
+.cloud-3 {
+    width: 250px;
+    height: 85px;
+    top: 60%;
+    left: -5%;
+    animation-duration: 40s;
+    animation-delay: -5s;
+}
+
+.cloud-4 {
+    width: 180px;
+    height: 60px;
+    top: 80%;
+    left: -20%;
+    animation-duration: 30s;
+    animation-delay: -15s;
+}
+
+@keyframes float-cloud {
+    from {
+        transform: translateX(-100%);
+    }
+    to {
+        transform: translateX(1500px);
+    }
+}
+
+/* Grid digital */
+.cloud-grid {
+    background-image: radial-gradient(#1f77d4 1px, transparent 1px);
+    background-size: 30px 30px;
+}
+
+/* Partículas flotantes */
+.cloud-particles {
+    position: absolute;
+    inset: 0;
+}
+
+.cloud-particles::before,
+.cloud-particles::after {
+    content: '';
+    position: absolute;
+    width: 2px;
+    height: 2px;
+    background: rgba(31, 119, 212, 0.3);
+    border-radius: 50%;
+    animation: float-particle linear infinite;
+}
+
+@keyframes float-particle {
+    0% {
+        transform: translate(0, 0);
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        transform: translate(100px, -100px);
+        opacity: 0;
+    }
+}
+
+/* Animaciones de backup/datos */
+.data-backup-container {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+}
+
+.data-stream {
+    position: absolute;
+    width: 2px;
+    background: linear-gradient(to bottom, transparent, #1f77d4, transparent);
+    animation: dataStream 8s linear infinite;
+}
+
+.data-1 { left: 20%; height: 60%; animation-delay: -2s; }
+.data-2 { left: 50%; height: 70%; animation-delay: -4s; }
+.data-3 { left: 80%; height: 50%; animation-delay: -6s; }
+
+.data-block {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    border: 2px solid #1f77d4;
+    border-radius: 12px;
+    opacity: 0.2;
+    animation: dataBlock 10s linear infinite;
+}
+
+.block-1 { top: 20%; left: 30%; animation-delay: -3s; }
+.block-2 { top: 60%; left: 70%; animation-delay: -7s; }
+
+@keyframes dataStream {
+    0% {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(100%);
+        opacity: 0;
+    }
+}
+
+@keyframes dataBlock {
+    0% {
+        transform: translateY(-100%) rotate(0deg);
+        opacity: 0;
+    }
+    20% {
+        opacity: 0.2;
+    }
+    80% {
+        opacity: 0.2;
+    }
+    100% {
+        transform: translateY(100%) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+.backup-grid {
+    background-image: radial-gradient(#1f77d4 1px, transparent 1px);
+    background-size: 50px 50px;
+}
+
+.backup-particles {
+    background-image: 
+        radial-gradient(#1f77d4 1px, transparent 1px),
+        radial-gradient(#1f77d4 1px, transparent 1px);
+    background-size: 30px 30px;
+    background-position: 0 0, 15px 15px;
+    animation: particleFloat 20s linear infinite;
+}
+
+@keyframes particleFloat {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(-50%);
+    }
+}
+
+@keyframes fade-in {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animate-fade-in {
+    animation: fade-in 0.3s ease-out;
+}
+
+@keyframes glow {
+    0%, 100% { opacity: 0.5; height: 20%; }
+    50% { opacity: 1; height: 40%; }
+}
+
+@keyframes spin-slow {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.animate-glow {
+    animation: glow 2s ease-in-out infinite;
+}
+
+.animate-spin-slow {
+    animation: spin-slow 8s linear infinite;
+}
+
+/* Animaciones de infraestructura */
+.network-lines {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+}
+
+.line {
+    position: absolute;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #1f77d4, transparent);
+    animation: moveLine 3s infinite;
+}
+
+.line-1 {
+    top: 30%;
+    width: 60%;
+    left: -60%;
+    animation-delay: 0s;
+}
+
+.line-2 {
+    top: 45%;
+    width: 40%;
+    left: -40%;
+    animation-delay: 1s;
+}
+
+.line-3 {
+    top: 60%;
+    width: 50%;
+    left: -50%;
+    animation-delay: 2s;
+}
+
+@keyframes moveLine {
+    0% {
+        transform: translateX(0);
+        opacity: 0;
+    }
+    20% {
+        opacity: 1;
+    }
+    80% {
+        opacity: 1;
+    }
+    100% {
+        transform: translateX(200%);
+        opacity: 0;
+    }
+}
+
+/* Nodos de red */
+.network-nodes {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+}
+
+.node {
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    background: #1f77d4;
+    border-radius: 50%;
+    animation: pulseNode 2s infinite;
+}
+
+.node-1 { top: 30%; left: 20%; animation-delay: 0s; }
+.node-2 { top: 45%; left: 60%; animation-delay: 0.5s; }
+.node-3 { top: 60%; left: 40%; animation-delay: 1s; }
+.node-4 { top: 75%; left: 80%; animation-delay: 1.5s; }
+
+@keyframes pulseNode {
+    0% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(31, 119, 212, 0.7);
+    }
+    70% {
+        transform: scale(1.2);
+        box-shadow: 0 0 0 10px rgba(31, 119, 212, 0);
+    }
+    100% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(31, 119, 212, 0);
+    }
+}
+
+/* Servidores animados */
+.servers {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+}
+
+.server {
+    position: absolute;
+    width: 40px;
+    height: 60px;
+    background: linear-gradient(135deg, #1f77d4, #0a192f);
+    border-radius: 4px;
+    animation: serverPulse 3s infinite;
+}
+
+.server-1 {
+    top: 40%;
+    right: 20%;
+    animation-delay: 0s;
+}
+
+.server-2 {
+    top: 60%;
+    right: 30%;
+    animation-delay: 1.5s;
+}
+
+@keyframes serverPulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(31, 119, 212, 0.4);
+    }
+    70% {
+        box-shadow: 0 0 0 20px rgba(31, 119, 212, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(31, 119, 212, 0);
+    }
+}
+
+/* Grid de infraestructura */
+.infra-grid {
+    background-image: 
+        linear-gradient(rgba(31, 119, 212, 0.1) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(31, 119, 212, 0.1) 1px, transparent 1px);
+    background-size: 50px 50px;
+    animation: gridMove 20s linear infinite;
+}
+
+@keyframes gridMove {
+    0% {
+        background-position: 0 0;
+    }
+    100% {
+        background-position: 50px 50px;
+    }
+}
+
+/* Desactivar animaciones si el usuario prefiere reducir el movimiento */
+@media (prefers-reduced-motion: reduce) {
+    .line,
+    .node,
+    .server,
+    .infra-grid {
+        animation: none !important;
+    }
+}
+
+/* Red de conexiones */
+.network-mesh {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+}
+
+.network-dot {
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    background: #1f77d4;
+    border-radius: 50%;
+    opacity: 0.7;
+}
+
+.network-dot-1 { top: 20%; left: 30%; }
+.network-dot-2 { top: 35%; left: 70%; }
+.network-dot-3 { top: 60%; left: 25%; }
+.network-dot-4 { top: 75%; left: 65%; }
+.network-dot-5 { top: 45%; left: 45%; }
+
+.network-line {
+    position: absolute;
+    height: 2px;
+    background: linear-gradient(90deg, rgba(31, 119, 212, 0.1), rgba(31, 119, 212, 0.4), rgba(31, 119, 212, 0.1));
+    transform-origin: left center;
+    animation: connectNodes 3s infinite;
+}
+
+.network-line-1 {
+    top: calc(20% + 4px);
+    left: calc(30% + 4px);
+    width: 40%;
+    transform: rotate(15deg);
+    animation-delay: 0s;
+}
+
+.network-line-2 {
+    top: calc(35% + 4px);
+    left: calc(45% + 4px);
+    width: 25%;
+    transform: rotate(-25deg);
+    animation-delay: 0.5s;
+}
+
+.network-line-3 {
+    top: calc(60% + 4px);
+    left: calc(25% + 4px);
+    width: 45%;
+    transform: rotate(35deg);
+    animation-delay: 1s;
+}
+
+.network-line-4 {
+    top: calc(45% + 4px);
+    left: calc(45% + 4px);
+    width: 30%;
+    transform: rotate(15deg);
+    animation-delay: 1.5s;
+}
+
+@keyframes connectNodes {
+    0% {
+        opacity: 0;
+        transform: scaleX(0);
+    }
+    50% {
+        opacity: 1;
+        transform: scaleX(1);
+    }
+    100% {
+        opacity: 0;
+        transform: scaleX(0);
+    }
+}
+
+/* Pulso en los nodos */
+.network-dot {
+    animation: pulseDot 2s infinite;
+}
+
+@keyframes pulseDot {
+    0% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(31, 119, 212, 0.4);
+    }
+    70% {
+        transform: scale(1.5);
+        box-shadow: 0 0 0 10px rgba(31, 119, 212, 0);
+    }
+    100% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(31, 119, 212, 0);
+    }
+}
+
+/* Aplicar delays diferentes a cada dot */
+.network-dot-1 { animation-delay: 0s; }
+.network-dot-2 { animation-delay: 0.4s; }
+.network-dot-3 { animation-delay: 0.8s; }
+.network-dot-4 { animation-delay: 1.2s; }
+.network-dot-5 { animation-delay: 1.6s; }
+
+/* Desactivar animaciones si el usuario prefiere reducir el movimiento */
+@media (prefers-reduced-motion: reduce) {
+    .network-line,
+    .network-dot {
+        animation: none !important;
+    }
+}
+
+/* Animaciones de soporte */
+.support-dots {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+}
+
+.support-dot {
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    background: #1f77d4;
+    border-radius: 50%;
+    animation: supportPulse 2s infinite;
+}
+
+.support-dot-1 { top: 30%; left: 20%; }
+.support-dot-2 { top: 60%; left: 40%; }
+.support-dot-3 { top: 40%; left: 70%; }
+
+.support-line {
+    position: absolute;
+    height: 2px;
+    background: linear-gradient(90deg, #1f77d4, transparent);
+    animation: supportLine 3s infinite;
+}
+
+.support-line-1 {
+    top: 35%;
+    left: 20%;
+    width: 200px;
+    transform: rotate(30deg);
+}
+
+.support-line-2 {
+    top: 50%;
+    left: 40%;
+    width: 150px;
+    transform: rotate(-20deg);
+}
+
+/* Círculos de pulso */
+.pulse-circle {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 150px;
+    height: 150px;
+    border: 2px solid #1f77d4;
+    border-radius: 50%;
+    animation: pulseCircle 3s infinite;
+    opacity: 0;
+}
+
+.delay-1 { animation-delay: 1s; }
+.delay-2 { animation-delay: 2s; }
+
+/* Iconos flotantes */
+.floating-icons {
+    position: absolute;
+    inset: 0;
+}
+
+.floating-icon {
+    position: absolute;
+    color: #1f77d4;
+    opacity: 0.6;
+    animation: floatIcon 6s infinite;
+}
+
+.icon-1 {
+    top: 30%;
+    left: 20%;
+    font-size: 2rem;
+}
+
+.icon-2 {
+    top: 60%;
+    left: 70%;
+    font-size: 2rem;
+    animation-delay: 2s;
+}
+
+.icon-3 {
+    top: 40%;
+    left: 45%;
+    font-size: 2rem;
+    animation-delay: 4s;
+}
+
+@keyframes supportPulse {
+    0% { transform: scale(1); opacity: 0.7; }
+    50% { transform: scale(1.5); opacity: 0.3; }
+    100% { transform: scale(1); opacity: 0.7; }
+}
+
+@keyframes supportLine {
+    0% { transform: scaleX(0) rotate(30deg); opacity: 0; }
+    50% { transform: scaleX(1) rotate(30deg); opacity: 0.5; }
+    100% { transform: scaleX(0) rotate(30deg); opacity: 0; }
+}
+
+@keyframes pulseCircle {
+    0% { transform: translate(-50%, -50%) scale(0.8); opacity: 0.5; }
+    100% { transform: translate(-50%, -50%) scale(1.5); opacity: 0; }
+}
+
+@keyframes floatIcon {
+    0% { transform: translateY(0) rotate(0); }
+    50% { transform: translateY(-20px) rotate(10deg); }
+    100% { transform: translateY(0) rotate(0); }
+}
+
+/* Animaciones para Desarrollo de Software */
+
+/* Animación de entrada para los elementos */
+@keyframes slideIn {
+    0% {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Animación de pulso para los botones */
+@keyframes pulseButton {
+    0% {
+        transform: scale(1);
+        box-shadow: 0 0 0 rgba(31, 119, 212, 0);
+    }
+    50% {
+        transform: scale(1.05);
+        box-shadow: 0 0 0 10px rgba(31, 119, 212, 0.5);
+    }
+    100% {
+        transform: scale(1);
+        box-shadow: 0 0 0 rgba(31, 119, 212, 0);
+    }
+}
+
+/* Animación de flotación para los íconos */
+@keyframes floatIcon {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+/* Clases de animación */
+.animate-slide-in {
+    animation: slideIn 0.5s ease-out forwards;
+}
+
+.animate-pulse-button {
+    animation: pulseButton 1.5s infinite;
+}
+
+.animate-float-icon {
+    animation: floatIcon 3s ease-in-out infinite;
+}
+
+@keyframes spin {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }

@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500">
+    <style>
+        .error-text { font: bold 120px sans-serif; fill: #1e40af; }
+        .bg-circle { fill: #dbeafe; }
+    </style>
+    <circle class="bg-circle" cx="250" cy="250" r="200"/>
+    <text class="error-text" x="50%" y="50%" text-anchor="middle" dy=".35em">404</text>
+</svg> 
