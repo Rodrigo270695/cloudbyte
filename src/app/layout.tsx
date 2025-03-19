@@ -4,6 +4,7 @@ import "./globals.css";
 import Navbar from "./components/layout/Navbar";
 import Footer from "./components/layout/Footer";
 import { Toaster } from 'react-hot-toast';
+import WhatsAppButton from "./components/WhatsAppButton";
 
 const geist = Geist({
   subsets: ["latin"],
@@ -31,6 +32,7 @@ export default function RootLayout({
         <main className="flex-grow mt-20">
           {children}
         </main>
+        <WhatsAppButton phoneNumber="+51976709804" message="¡Hola! Me gustaría obtener más información sobre sus servicios." />
         <Footer />
         <Toaster 
           position="top-right"

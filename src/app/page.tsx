@@ -23,7 +23,7 @@ const jsonLd = {
     },
     "contactPoint": {
         "@type": "ContactPoint",
-        "telephone": "+123-456-7890",
+        "telephone": "+51 976709804",
         "contactType": "customer service",
         "email": "contacto@cloudbyte.com"
     }
@@ -608,4 +608,3 @@ const PartnersSection = () => (
         </div>
     </section>
 );
-
